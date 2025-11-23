@@ -12,8 +12,9 @@ env/
 # IDE settings
 .vscode/
 .idea/
-.venv_for_biometrics/
+# .venv_for_biometrics/
 venv_for_biometrics/
+known_faces/
 
 
 # OS files
