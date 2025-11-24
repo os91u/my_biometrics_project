@@ -11,6 +11,7 @@ from tkinter import simpledialog, messagebox
 # --- إعدادات ---
 ENCODINGS_FILE = "encodings.pickle"
 CAMERA_SOURCE = 0
+#  "http://172.17.1.19:8080/video"
 EYE_ASPECT_RATIO_THRESHOLD = 0.25
 EYE_ASPECT_RATIO_CONSEC_FRAMES = 2
 # عدد البصمات التي سنأخذها لكل شخص
