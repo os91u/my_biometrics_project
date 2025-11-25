@@ -11,11 +11,11 @@ from tkinter import simpledialog, messagebox
 # --- إعدادات ---
 ENCODINGS_FILE = "encodings.pickle"
 CAMERA_SOURCE = 0
-#  "http://172.17.1.19:8080/video"
+# CAMERA_SOURCE =   "http://192.168.202.140:8080/video"
 EYE_ASPECT_RATIO_THRESHOLD = 0.25
 EYE_ASPECT_RATIO_CONSEC_FRAMES = 2
 # عدد البصمات التي سنأخذها لكل شخص
-NUM_ENCODINGS_PER_PERSON = 3 
+NUM_ENCODINGS_PER_PERSON = 3
 
 # --- دوال مساعدة (تبقى كما هي) ---
 def eye_aspect_ratio(eye):
@@ -25,6 +25,7 @@ def eye_aspect_ratio(eye):
     ear = (A + B) / (2.0 * C)
     return ear
 
+
 def load_encodings():
     if os.path.exists(ENCODINGS_FILE):
         with open(ENCODINGS_FILE, "rb") as f:
@@ -33,11 +34,13 @@ def load_encodings():
         data = {"encodings": [], "names": []}
     return data
 
+
 def save_encodings(data):
     with open(ENCODINGS_FILE, "wb") as f:
         f.write(pickle.dumps(data))
 
 # --- الوظائف الرئيسية (المحسنة) ---
+
 
 def add_new_face_enhanced():
     """
@@ -45,7 +48,7 @@ def add_new_face_enhanced():
     """
     data = load_encodings()
     vs = cv2.VideoCapture(CAMERA_SOURCE)
-    
+
     # طلب اسم الشخص أولاً
     new_name = simpledialog.askstring("Input", "Please enter the name for the new person:", parent=None)
     if not new_name or not new_name.strip():
@@ -62,21 +65,21 @@ def add_new_face_enhanced():
     for i, instruction in enumerate(instructions):
         messagebox.showinfo(f"Step {i+1}/{len(instructions)}", instruction)
         face_captured_for_step = False
-        
+
         while not face_captured_for_step:
             ret, frame = vs.read()
             if not ret: break
-            
+
             # عرض التعليمات على الشاشة
             cv2.putText(frame, f"Step {i+1}: {instruction}", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 255), 2)
             cv2.imshow("Enrollment Process (Press 's' to capture, 'q' to quit)", frame)
-            
+
             key = cv2.waitKey(1) & 0xFF
-            
+
             # السماح للمستخدم بالتقاط الصورة يدوياً بالضغط على 's'
             if key == ord('s'):
                 rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-                
+
                 # كشف الحيوية (الرمش) مطلوب فقط للخطوة الأولى
                 is_live = False
                 if i == 0:
@@ -87,7 +90,7 @@ def add_new_face_enhanced():
                             is_live = True
                             break
                 else:
-                    is_live = True # نتجاوز كشف الحيوية للقطات الجانبية
+                    is_live = True  # نتجاوز كشف الحيوية للقطات الجانبية
 
                 if is_live:
                     encodings = face_recognition.face_encodings(rgb_frame)
@@ -113,7 +116,7 @@ def add_new_face_enhanced():
         for encoding in captured_encodings:
             data["encodings"].append(encoding)
             data["names"].append(new_name)
-        
+
         save_encodings(data)
         messagebox.showinfo("Success", f"Successfully captured {len(captured_encodings)} face signatures for '{new_name}'.")
     else:
@@ -122,55 +125,81 @@ def add_new_face_enhanced():
 
 def verify_face():
     """
-    التحقق من بصمة الوجه (الكود يبقى كما هو لأن منطق المقارنة يعالجه تلقائياً).
-    face_recognition.compare_faces سيقارن البصمة الجديدة مع كل البصمات في قاعدة البيانات.
+    التحقق من بصمة الوجه (نسخة محسنة الأداء).
+    يعالج إطاراً واحداً كل بضعة إطارات لزيادة السرعة.
     """
     data = load_encodings()
     if not data["encodings"]:
         messagebox.showerror("Error", "No faces have been saved yet. Please add a face first.")
         return
-        
+
     vs = cv2.VideoCapture(CAMERA_SOURCE)
     messagebox.showinfo("Verify Face", "Camera will start. Recognition begins after a blink.")
+
+    # --- متغيرات تحسين الأداء ---
+    frame_count = 0
+    # === هذا هو المتغير الذي يمكنك التحكم به ===
+    PROCESS_EVERY_N_FRAMES = 5
+
+    # متغيرات لتخزين آخر نتيجة (لنعرضها في الإطارات التي نتخطاها)
+    known_face_locations = []
+    known_face_names = []
 
     is_live = False
     while True:
         ret, frame = vs.read()
         if not ret: break
-        
-        rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-        
-        if not is_live:
-            face_landmarks_list = face_recognition.face_landmarks(rgb_frame)
-            for face_landmarks in face_landmarks_list:
-                ear = (eye_aspect_ratio(face_landmarks['left_eye']) + eye_aspect_ratio(face_landmarks['right_eye'])) / 2.0
-                if ear < EYE_ASPECT_RATIO_THRESHOLD:
-                    is_live = True
-                    print("[INFO] Liveness confirmed. Starting recognition...")
-        
-        if is_live:
-            boxes = face_recognition.face_locations(rgb_frame, model="hog")
-            encodings = face_recognition.face_encodings(rgb_frame, boxes)
-            names = []
-            for encoding in encodings:
-                matches = face_recognition.compare_faces(data["encodings"], encoding)
-                name = "Unknown"
-                if True in matches:
-                    matched_idxs = [i for (i, b) in enumerate(matches) if b]
-                    counts = {}
-                    for i in matched_idxs:
-                        name = data["names"][i]
-                        counts[name] = counts.get(name, 0) + 1
-                    name = max(counts, key=counts.get)
-                names.append(name)
 
-            for ((top, right, bottom, left), name) in zip(boxes, names):
-                color = (0, 255, 0) if name != "Unknown" else (0, 0, 255)
-                cv2.rectangle(frame, (left, top), (right, bottom), color, 2)
-                cv2.putText(frame, name, (left, top - 15), cv2.FONT_HERSHEY_SIMPLEX, 0.75, color, 2)
+        # زيادة عداد الإطارات
+        frame_count += 1
+
+        # --- المعالجة المكلفة (تتم فقط في الإطارات المحددة) ---
+        if frame_count % PROCESS_EVERY_N_FRAMES == 0:
+            rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+
+            # كشف الحيوية أولاً (إذا لم يتم تأكيده بعد)
+            if not is_live:
+                face_landmarks_list = face_recognition.face_landmarks(rgb_frame)
+                for face_landmarks in face_landmarks_list:
+                    ear = (eye_aspect_ratio(face_landmarks['left_eye']) + eye_aspect_ratio(face_landmarks['right_eye'])) / 2.0
+                    if ear < EYE_ASPECT_RATIO_THRESHOLD:
+                        is_live = True
+                        print("[INFO] Liveness confirmed. Starting recognition...")
+
+            # إذا تم تأكيد الحيوية، نبدأ بالتعرف
+            if is_live:
+                # إعادة تعيين النتائج قبل كل معالجة جديدة
+                known_face_locations = []
+                known_face_names = []
+
+                boxes = face_recognition.face_locations(rgb_frame, model="hog")
+                encodings = face_recognition.face_encodings(rgb_frame, boxes)
+
+                names = []
+                for encoding in encodings:
+                    matches = face_recognition.compare_faces(data["encodings"], encoding)
+                    name = "Unknown"
+                    if True in matches:
+                        matched_idxs = [i for (i, b) in enumerate(matches) if b]
+                        counts = {}
+                        for i in matched_idxs:
+                            name = data["names"][i]
+                            counts[name] = counts.get(name, 0) + 1
+                        name = max(counts, key=counts.get)
+                    names.append(name)
+
+                # تحديث المتغيرات بالنتائج الجديدة
+                known_face_locations = boxes
+                known_face_names = names
+
+        # --- رسم النتائج (يتم في كل إطار باستخدام آخر نتيجة معروفة) ---
+        for ((top, right, bottom, left), name) in zip(known_face_locations, known_face_names):
+            color = (0, 255, 0) if name != "Unknown" else (0, 0, 255)
+            cv2.rectangle(frame, (left, top), (right, bottom), color, 2)
+            cv2.putText(frame, name, (left, top - 15), cv2.FONT_HERSHEY_SIMPLEX, 0.75, color, 2)
 
         cv2.imshow("Face Verification (Press 'q' to exit)", frame)
         if cv2.waitKey(1) & 0xFF == ord("q"): break
-            
+
     vs.release()
     cv2.destroyAllWindows()
