@@ -1,0 +1,26 @@
+[
+    {
+        "name": "osamah",
+        "role": "unknown",
+        "action": "BOOTSTRAP_LOGIN",
+        "result": "FAILED",
+        "reason": "Invalid credentials",
+        "time": "2026-01-21 19:02:14"
+    },
+    {
+        "name": "oosamah",
+        "role": "unknown",
+        "action": "BOOTSTRAP_LOGIN",
+        "result": "FAILED",
+        "reason": "Invalid credentials",
+        "time": "2026-01-21 19:02:26"
+    },
+    {
+        "name": "osamah",
+        "role": "admin",
+        "action": "SYSTEM_BOOTSTRAP",
+        "result": "SUCCESS",
+        "reason": "Initial admin created",
+        "time": "2026-01-21 19:07:23"
+    }
+]
