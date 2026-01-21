@@ -5,7 +5,7 @@ class ConfidenceEngine:
     
     def calculate_login_score(self, distances, liveness_results, challenge_passed):
         """Aggregates all signals into a single confidence score (0-1)."""
-        if not distances:
+        if len(distances) == 0:
             return 0.0, "No face match"
         
         # 1. Matching Score

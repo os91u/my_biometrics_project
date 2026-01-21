@@ -14,13 +14,13 @@ class AdminUI:
             print("1. Enroll New User")
             print("2. View Audit Logs")
             print("3. Logout")
-            choice = input("Select option: ")
+            choice = input("Select option: ").lower()
 
             if choice == '1':
                 self.enrollment_flow()
             elif choice == '2':
                 self.show_logs()
-            elif choice == '3':
+            elif choice == '3' or choice == 'q':
                 self.controller.logout()
                 return "LOGIN"
 

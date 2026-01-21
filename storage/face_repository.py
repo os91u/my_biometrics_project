@@ -18,16 +18,32 @@ class FaceRepository:
             user['encodings'] = [np.array(e) for e in user['encodings']]
         return raw_data
 
+    def _get_serializable_data(self):
+        """Converts all numpy arrays in the data dictionary to lists for JSON."""
+        serializable = {}
+        for name, data in self._data.items():
+            encs = data['encodings']
+            # Convert each encoding to list if it's a numpy array
+            clean_encs = [e.tolist() if isinstance(e, np.ndarray) else e for e in encs]
+            serializable[name] = {
+                "role": data['role'],
+                "encodings": clean_encs
+            }
+        return serializable
+
     def save_user(self, name: str, role: str, encodings: list):
         """Saves a new user with their encodings."""
-        # Convert numpy arrays to lists for JSON serialization
-        enc_list = [e.tolist() for e in encodings]
+        # Store in local cache (as arrays/lists is fine, _load will normalize)
         self._data[name] = {
             "role": role,
-            "encodings": enc_list
+            "encodings": encodings
         }
-        self.storage.save_to_file(self.path, self._data)
-        # Refresh local cache
+        
+        # Get fully serializable copy for storage
+        save_data = self._get_serializable_data()
+        self.storage.save_to_file(self.path, save_data)
+        
+        # Refresh local cache to ensure everything is consistent (as arrays)
         self._data = self._load()
 
     def get_user(self, name: str):

@@ -22,5 +22,53 @@
         "result": "SUCCESS",
         "reason": "Initial admin created",
         "time": "2026-01-21 19:07:23"
+    },
+    {
+        "name": "osamah",
+        "role": "admin",
+        "action": "LOGIN",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-21 19:12:26"
+    },
+    {
+        "name": "osamah",
+        "role": "admin",
+        "action": "LOGIN",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-21 19:23:23"
+    },
+    {
+        "name": "ali",
+        "role": "user",
+        "action": "FACE_ENROLL",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-21 19:23:42"
+    },
+    {
+        "name": "osamah",
+        "role": "admin",
+        "action": "LOGOUT",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-21 19:23:52"
+    },
+    {
+        "name": "osamah",
+        "role": "admin",
+        "action": "LOGIN",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-21 19:24:04"
+    },
+    {
+        "name": "osamah",
+        "role": "admin",
+        "action": "LOGOUT",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-21 19:24:15"
     }
 ]
