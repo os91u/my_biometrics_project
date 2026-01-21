@@ -70,5 +70,69 @@
         "result": "SUCCESS",
         "reason": "",
         "time": "2026-01-21 19:24:15"
+    },
+    {
+        "name": "osamah",
+        "role": "admin",
+        "action": "LOGIN",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-21 19:36:35"
+    },
+    {
+        "name": "osamah",
+        "role": "admin",
+        "action": "LOGIN",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-21 19:50:21"
+    },
+    {
+        "name": "osamah",
+        "role": "admin",
+        "action": "LOGIN",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-21 20:12:13"
+    },
+    {
+        "name": "osamah",
+        "role": "admin",
+        "action": "LOGOUT",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-21 20:12:51"
+    },
+    {
+        "name": "osamah",
+        "role": "admin",
+        "action": "LOGIN",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-21 20:13:00"
+    },
+    {
+        "name": "osamah",
+        "role": "admin",
+        "action": "LOGIN",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-21 20:31:31"
+    },
+    {
+        "name": "osamah",
+        "role": "admin",
+        "action": "LOGIN",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-21 21:20:06"
+    },
+    {
+        "name": "aid",
+        "role": "user",
+        "action": "FACE_ENROLL",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-21 21:20:31"
     }
 ]

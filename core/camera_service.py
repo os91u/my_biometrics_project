@@ -18,6 +18,10 @@ class CameraService:
 
     def get_frame(self):
         """Captures a single frame."""
+        return self.get_raw_frame()
+
+    def get_raw_frame(self):
+        """Internal capture for buffer management."""
         if self.cap is None:
             return None
         ret, frame = self.cap.read()

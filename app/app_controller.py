@@ -47,9 +47,19 @@ class AppController:
         return {"status": "FAILED", "message": "Bootstrap enrollment failed"}
 
     def start_camera(self):
-        self.camera.start()
+        """Starts the camera with retry logic for Windows."""
+        print("DEBUG: AppController.start_camera() called", flush=True)
+        try:
+            self.camera.start()
+            # Flush a few frames to clear the buffer
+            for _ in range(5):
+                self.camera.get_raw_frame()
+            print("DEBUG: Camera started successfully", flush=True)
+        except Exception as e:
+            print(f"ERROR: Failed to start camera: {e}", flush=True)
 
     def stop_camera(self):
+        print("DEBUG: AppController.stop_camera() called", flush=True)
         self.camera.stop()
 
     def get_ui_frame(self):
@@ -79,14 +89,18 @@ class AppController:
         return self.active_challenge
 
     def attempt_login(self, frame, liveness_data):
+        print(f"DEBUG: attempt_login called. challenge_met={self.challenge_met}", flush=True)
         result = self.auth_flow.login_attempt(
             frame, 
             liveness_data, 
             self.active_challenge, 
             self.challenge_met
         )
+        print(f"DEBUG: Login result: {result}", flush=True)
+        
         # Reset challenge after attempt
         self.active_challenge = None
+        self.challenge_met = False
         return result
 
     def attempt_enrollment(self, name, frames):

@@ -41,7 +41,7 @@ class LivenessEngine:
         results = self.face_mesh.process(rgb_frame)
         
         if not results.multi_face_landmarks:
-            return {"liveness_score": 0.0, "reason": "No face detected"}
+            return {"liveness_score": 0.0, "reason": "No face detected", "face_present": False}
 
         face_landmarks = results.multi_face_landmarks[0].landmark
         
@@ -68,7 +68,8 @@ class LivenessEngine:
             "liveness_score": 1.0 if not is_blinking else 0.5, # Reduced score during blink
             "ear": avg_ear,
             "horizontal_ratio": horizontal_ratio,
-            "is_blinking": is_blinking
+            "is_blinking": is_blinking,
+            "face_present": True
         }
 
     def generate_challenge(self):

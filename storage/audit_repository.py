@@ -40,3 +40,7 @@ class AuditRepository:
             return []
         with open(self.log_path, 'r') as f:
             return json.load(f)
+
+    def get_all_logs(self):
+        """Alias for get_logs() for compatibility."""
+        return self.get_logs()

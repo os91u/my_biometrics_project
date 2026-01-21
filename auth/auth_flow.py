@@ -21,8 +21,12 @@ class AuthFlow:
 
     def login_attempt(self, frame, liveness_data, challenge, challenge_passed):
         """Handles a single login attempt."""
+        print(f"DEBUG: login_attempt called. challenge_passed={challenge_passed}", flush=True)
+        
         face_locations = self.face_engine.detect_faces(frame)
         num_faces = len(face_locations)
+        
+        print(f"DEBUG: Detected {num_faces} face(s)", flush=True)
         
         if num_faces == 0:
             return {"status": "NO_FACE", "message": "No face detected"}
@@ -35,25 +39,34 @@ class AuthFlow:
         encoding = self.face_engine.get_encodings(frame, face_locations)[0]
         
         # Check against all known users
+        all_users = self.face_repo.get_all_users()
+        print(f"DEBUG: Comparing against {len(all_users)} users in database: {list(all_users.keys())}", flush=True)
+        
         best_user = None
         best_score = 0.0
         best_reason = "No match"
         
-        for name, data in self.face_repo.get_all_users().items():
+        for name, data in all_users.items():
             distances = self.face_engine.compare_faces(data['encodings'], encoding)
             score, reason = self.confidence_engine.calculate_login_score(distances, liveness_data, challenge_passed)
+            
+            print(f"DEBUG: User '{name}' -> score={score:.3f}, reason={reason}", flush=True)
             
             if score > best_score:
                 best_score = score
                 best_user = {"name": name, "role": data['role']}
                 best_reason = reason
         
+        print(f"DEBUG: Best match: {best_user}, score={best_score:.3f}", flush=True)
+        
         if best_user and self.confidence_engine.is_access_granted(best_score):
             self.current_user = best_user
             self.audit_repo.log(best_user['name'], best_user['role'], "LOGIN", "SUCCESS")
+            print(f"DEBUG: ACCESS GRANTED for {best_user['name']}", flush=True)
             return {"status": "SUCCESS", "user": best_user}
         else:
             self.audit_repo.log("unknown", "none", "LOGIN", "FAILED", best_reason)
+            print(f"DEBUG: ACCESS DENIED - {best_reason}", flush=True)
             return {"status": "FAILED", "message": best_reason}
 
     def enroll_user(self, name, encodings):
