@@ -1,0 +1,8 @@
+opencv-python==4.8.1.78
+face-recognition
+dlib
+mediapipe==0.10.11
+numpy==1.26.4
+customtkinter
+Pillow
+cryptography

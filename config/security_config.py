@@ -2,7 +2,7 @@ import os
 
 # Thresholds for face matching
 FACE_MATCH_THRESHOLD = 0.6  # Lower is stricter for dlib/face_recognition distance
-MIN_CONFIDENCE_SCORE = 0.8  # Aggregated score required for login
+MIN_CONFIDENCE_SCORE = 0.65  # Aggregated score required for login (Lowered for real-world use)
 
 # Liveness Challenge Settings
 CHALLENGE_TIMEOUT = 5.0  # Seconds to complete a liveness challenge

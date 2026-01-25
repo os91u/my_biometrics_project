@@ -3,6 +3,7 @@ import sys
 from app.app_controller import AppController
 from ui.gui_login import LoginView
 from ui.gui_admin import AdminDashboard
+from ui.gui_user_dashboard import UserDashboard
 from ui.gui_bootstrap import BootstrapView
 from config.gui_config import *
 from config.security_config import STATE_BOOTSTRAP
@@ -43,16 +44,26 @@ class BiometricApp(ctk.CTk):
         self.current_frame.pack(fill="both", expand=True)
 
     def on_login_success(self, user):
+        print(f"DEBUG: on_login_success called with user: {user}", flush=True)
         if user['role'] == 'admin':
+            print("DEBUG: Navigating to Admin Dashboard", flush=True)
             self.show_admin(user)
         else:
-            print(f"User {user['name']} logged in. Role: {user['role']}")
+            print(f"DEBUG: Navigating to User Dashboard for {user['name']}", flush=True)
+            self.show_user_dashboard(user)
 
     def show_admin(self, user):
         if self.current_frame:
             self.current_frame.destroy()
         
         self.current_frame = AdminDashboard(self, self.controller, user, self.logout)
+        self.current_frame.pack(fill="both", expand=True)
+    
+    def show_user_dashboard(self, user):
+        if self.current_frame:
+            self.current_frame.destroy()
+        
+        self.current_frame = UserDashboard(self, self.controller, user, self.logout)
         self.current_frame.pack(fill="both", expand=True)
 
     def logout(self):

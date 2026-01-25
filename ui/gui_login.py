@@ -110,15 +110,35 @@ class LoginView(ctk.CTkFrame):
         self.status_val.configure(text=f"DO: {challenge}")
 
     def attempt_login(self):
+        print("DEBUG: attempt_login called in LoginView", flush=True)
         frame, liveness_data = self.controller.get_ui_frame()
         result = self.controller.attempt_login(frame, liveness_data)
         
+        print(f"DEBUG: Login result in LoginView: {result}", flush=True)
+        
         if result['status'] == 'SUCCESS':
+            print(f"DEBUG: Login SUCCESS - User: {result.get('user')}", flush=True)
             self.status_val.configure(text="ACCESS GRANTED!", text_color=COLOR_SECONDARY)
             self.is_running = False
-            self.after(1000, lambda: self.on_login_success(result['user']))
+            # Call the transition immediately to see if there's any delay issue
+            print("DEBUG: About to call on_login_success callback", flush=True)
+            user_data = result['user']
+            print(f"DEBUG: User data to pass: {user_data}", flush=True)
+            # Use `after` to ensure the UI updates first, then transition
+            self.after(1000, lambda: self._transition_to_admin(user_data))
         else:
+            print(f"DEBUG: Login FAILED - {result.get('message')}", flush=True)
             self.status_val.configure(text=result.get('message', 'Login Failed'), text_color=COLOR_ERROR)
+    
+    def _transition_to_admin(self, user_data):
+        print(f"DEBUG: _transition_to_admin called with user: {user_data}", flush=True)
+        try:
+            self.on_login_success(user_data)
+            print("DEBUG: on_login_success callback executed successfully", flush=True)
+        except Exception as e:
+            print(f"ERROR: Exception in on_login_success: {e}", flush=True)
+            import traceback
+            traceback.print_exc()
 
     def stop(self):
         self.is_running = False
