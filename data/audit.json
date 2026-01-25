@@ -638,5 +638,181 @@
         "result": "SUCCESS",
         "reason": "",
         "time": "2026-01-25 11:45:23"
+    },
+    {
+        "name": "olllllllllllllah",
+        "role": "user",
+        "action": "LOGIN",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-25 12:36:24"
+    },
+    {
+        "name": "olllllllllllllah",
+        "role": "user",
+        "action": "LOGOUT",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-25 12:36:31"
+    },
+    {
+        "name": "olllllllllllllah",
+        "role": "user",
+        "action": "LOGIN",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-25 12:36:38"
+    },
+    {
+        "name": "olllllllllllllah",
+        "role": "user",
+        "action": "LOGOUT",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-25 12:36:40"
+    },
+    {
+        "name": "osamah",
+        "role": "admin",
+        "action": "SYSTEM_BOOTSTRAP",
+        "result": "SUCCESS",
+        "reason": "Initial admin created",
+        "time": "2026-01-25 12:37:28"
+    },
+    {
+        "name": "osamah",
+        "role": "admin",
+        "action": "LOGIN",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-25 12:37:39"
+    },
+    {
+        "name": "abdoh",
+        "role": "user",
+        "action": "FACE_ENROLL",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-25 12:38:07"
+    },
+    {
+        "name": "radman",
+        "role": "user",
+        "action": "FACE_ENROLL",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-25 12:38:37"
+    },
+    {
+        "name": "osamah",
+        "role": "admin",
+        "action": "LOGOUT",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-25 12:38:41"
+    },
+    {
+        "name": "osamah",
+        "role": "admin",
+        "action": "LOGIN",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-25 12:38:47"
+    },
+    {
+        "name": "osamah",
+        "role": "admin",
+        "action": "LOGOUT",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-25 12:38:50"
+    },
+    {
+        "name": "abdoh",
+        "role": "user",
+        "action": "LOGIN",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-25 12:38:58"
+    },
+    {
+        "name": "abdoh",
+        "role": "user",
+        "action": "LOGOUT",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-25 12:39:01"
+    },
+    {
+        "name": "radman",
+        "role": "user",
+        "action": "LOGIN",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-25 12:39:11"
+    },
+    {
+        "name": "radman",
+        "role": "user",
+        "action": "LOGOUT",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-25 12:43:52"
+    },
+    {
+        "name": "unknown",
+        "role": "none",
+        "action": "LOGIN",
+        "result": "FAILED",
+        "reason": "Multiple faces (2)",
+        "time": "2026-01-25 12:44:24"
+    },
+    {
+        "name": "osamah",
+        "role": "admin",
+        "action": "LOGIN",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-25 12:44:38"
+    },
+    {
+        "name": "unknown",
+        "role": "none",
+        "action": "LOGIN",
+        "result": "FAILED",
+        "reason": "Multiple faces (2)",
+        "time": "2026-01-25 12:50:14"
+    },
+    {
+        "name": "osamah",
+        "role": "admin",
+        "action": "LOGIN",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-25 12:50:31"
+    },
+    {
+        "name": "keeeef",
+        "role": "user",
+        "action": "FACE_ENROLL",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-25 12:51:08"
+    },
+    {
+        "name": "osamah",
+        "role": "admin",
+        "action": "LOGOUT",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-25 12:51:16"
+    },
+    {
+        "name": "unknown",
+        "role": "none",
+        "action": "LOGIN",
+        "result": "FAILED",
+        "reason": "Multiple faces (2)",
+        "time": "2026-01-25 12:51:21"
     }
 ]

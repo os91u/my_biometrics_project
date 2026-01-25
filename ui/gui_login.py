@@ -126,6 +126,12 @@ class LoginView(ctk.CTkFrame):
             print(f"DEBUG: User data to pass: {user_data}", flush=True)
             # Use `after` to ensure the UI updates first, then transition
             self.after(1000, lambda: self._transition_to_admin(user_data))
+        elif result['status'] == 'MULTI_FACE':
+            # حالة خاصة: عدة وجوه
+            print(f"DEBUG: MULTI_FACE - {result.get('message')}", flush=True)
+            self.status_val.configure(text="⚠️ عدة وجوه!\nMultiple Faces!", text_color=COLOR_ERROR)
+            # عرض نافذة منبثقة
+            self.show_multi_face_warning(result.get('message', 'Multiple faces detected'))
         else:
             print(f"DEBUG: Login FAILED - {result.get('message')}", flush=True)
             self.status_val.configure(text=result.get('message', 'Login Failed'), text_color=COLOR_ERROR)
@@ -139,6 +145,55 @@ class LoginView(ctk.CTkFrame):
             print(f"ERROR: Exception in on_login_success: {e}", flush=True)
             import traceback
             traceback.print_exc()
+    
+    def show_multi_face_warning(self, message):
+        """عرض تحذير عند اكتشاف عدة وجوه"""
+        try:
+            popup = ctk.CTkToplevel(self)
+            popup.title("⚠️ تحذير - Warning")
+            popup.geometry("450x250")
+            popup.resizable(False, False)
+            popup.transient(self.master)
+            popup.grab_set()
+            popup.attributes('-topmost', True)
+            
+            # أيقونة تحذير
+            warning_label = ctk.CTkLabel(popup, text="⚠️", font=("Arial", 60))
+            warning_label.pack(pady=20)
+            
+            # رسالة التحذير
+            msg_label = ctk.CTkLabel(
+                popup,
+                text="تم اكتشاف أكثر من وجه!\nMultiple faces detected!",
+                font=FONT_BOLD,
+                text_color=COLOR_ERROR
+            )
+            msg_label.pack(pady=10)
+            
+            # تعليمات
+            instr_label = ctk.CTkLabel(
+                popup,
+                text="الرجاء التأكد من وجود شخص واحد فقط أمام الكاميرا\nPlease ensure only ONE person is in front of the camera",
+                font=FONT_MAIN,
+                text_color=COLOR_TEXT_DIM,
+                wraplength=400
+            )
+            instr_label.pack(pady=10)
+            
+            # زر إغلاق
+            close_btn = ctk.CTkButton(
+                popup,
+                text="فهمت | OK",
+                fg_color=COLOR_PRIMARY,
+                hover_color="#1a4574",
+                command=popup.destroy,
+                width=140,
+                height=40
+            )
+            close_btn.pack(pady=15)
+        except Exception as e:
+            print(f"ERROR creating popup: {e}", flush=True)
 
     def stop(self):
         self.is_running = False
+
