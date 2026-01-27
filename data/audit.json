@@ -1,19 +1,27 @@
 [
     {
         "name": "osamah",
-        "role": "unknown",
-        "action": "BOOTSTRAP_LOGIN",
-        "result": "FAILED",
-        "reason": "Invalid credentials",
-        "time": "2026-01-21 19:02:14"
+        "role": "admin",
+        "action": "SYSTEM_BOOTSTRAP",
+        "result": "SUCCESS",
+        "reason": "Initial admin created",
+        "time": "2026-01-25 13:00:08"
     },
     {
-        "name": "oosamah",
-        "role": "unknown",
-        "action": "BOOTSTRAP_LOGIN",
-        "result": "FAILED",
-        "reason": "Invalid credentials",
-        "time": "2026-01-21 19:02:26"
+        "name": "osamah",
+        "role": "admin",
+        "action": "LOGIN",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-25 13:00:17"
+    },
+    {
+        "name": "osamah",
+        "role": "admin",
+        "action": "LOGIN",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-25 13:05:38"
     },
     {
         "name": "osamah",
@@ -21,7 +29,7 @@
         "action": "SYSTEM_BOOTSTRAP",
         "result": "SUCCESS",
         "reason": "Initial admin created",
-        "time": "2026-01-21 19:07:23"
+        "time": "2026-01-27 11:14:52"
     },
     {
         "name": "osamah",
@@ -29,23 +37,15 @@
         "action": "LOGIN",
         "result": "SUCCESS",
         "reason": "",
-        "time": "2026-01-21 19:12:26"
+        "time": "2026-01-27 11:15:22"
     },
     {
-        "name": "osamah",
-        "role": "admin",
-        "action": "LOGIN",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-21 19:23:23"
-    },
-    {
-        "name": "ali",
+        "name": "majeed",
         "role": "user",
         "action": "FACE_ENROLL",
         "result": "SUCCESS",
         "reason": "",
-        "time": "2026-01-21 19:23:42"
+        "time": "2026-01-27 11:16:44"
     },
     {
         "name": "osamah",
@@ -53,711 +53,7 @@
         "action": "LOGOUT",
         "result": "SUCCESS",
         "reason": "",
-        "time": "2026-01-21 19:23:52"
-    },
-    {
-        "name": "osamah",
-        "role": "admin",
-        "action": "LOGIN",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-21 19:24:04"
-    },
-    {
-        "name": "osamah",
-        "role": "admin",
-        "action": "LOGOUT",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-21 19:24:15"
-    },
-    {
-        "name": "osamah",
-        "role": "admin",
-        "action": "LOGIN",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-21 19:36:35"
-    },
-    {
-        "name": "osamah",
-        "role": "admin",
-        "action": "LOGIN",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-21 19:50:21"
-    },
-    {
-        "name": "osamah",
-        "role": "admin",
-        "action": "LOGIN",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-21 20:12:13"
-    },
-    {
-        "name": "osamah",
-        "role": "admin",
-        "action": "LOGOUT",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-21 20:12:51"
-    },
-    {
-        "name": "osamah",
-        "role": "admin",
-        "action": "LOGIN",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-21 20:13:00"
-    },
-    {
-        "name": "osamah",
-        "role": "admin",
-        "action": "LOGIN",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-21 20:31:31"
-    },
-    {
-        "name": "osamah",
-        "role": "admin",
-        "action": "LOGIN",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-21 21:20:06"
-    },
-    {
-        "name": "aid",
-        "role": "user",
-        "action": "FACE_ENROLL",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-21 21:20:31"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Insufficient confidence",
-        "time": "2026-01-23 03:31:47"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Insufficient confidence",
-        "time": "2026-01-23 03:32:13"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Insufficient confidence",
-        "time": "2026-01-23 03:32:32"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Insufficient confidence",
-        "time": "2026-01-23 03:32:48"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Insufficient confidence",
-        "time": "2026-01-23 03:33:03"
-    },
-    {
-        "name": "aid",
-        "role": "user",
-        "action": "LOGIN",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-24 17:48:25"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Liveness challenge failed",
-        "time": "2026-01-24 17:48:34"
-    },
-    {
-        "name": "osamah",
-        "role": "admin",
-        "action": "LOGIN",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-24 17:48:44"
-    },
-    {
-        "name": "aid",
-        "role": "user",
-        "action": "LOGIN",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-24 17:50:12"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Liveness challenge failed",
-        "time": "2026-01-24 17:50:18"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Liveness challenge failed",
-        "time": "2026-01-24 17:50:22"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Liveness challenge failed",
-        "time": "2026-01-24 17:50:23"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Liveness challenge failed",
-        "time": "2026-01-24 17:50:24"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Liveness challenge failed",
-        "time": "2026-01-24 17:50:24"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Liveness challenge failed",
-        "time": "2026-01-24 17:50:25"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Liveness challenge failed",
-        "time": "2026-01-24 17:50:25"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Liveness challenge failed",
-        "time": "2026-01-24 17:50:26"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Liveness challenge failed",
-        "time": "2026-01-24 17:50:26"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Liveness challenge failed",
-        "time": "2026-01-24 17:50:27"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Liveness challenge failed",
-        "time": "2026-01-24 17:50:27"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Liveness challenge failed",
-        "time": "2026-01-24 17:50:28"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Liveness challenge failed",
-        "time": "2026-01-24 17:50:29"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Liveness challenge failed",
-        "time": "2026-01-24 17:50:29"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Liveness challenge failed",
-        "time": "2026-01-24 17:50:30"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Liveness challenge failed",
-        "time": "2026-01-24 17:50:35"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Liveness challenge failed",
-        "time": "2026-01-24 17:50:45"
-    },
-    {
-        "name": "aid",
-        "role": "user",
-        "action": "LOGIN",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-24 17:51:16"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Liveness challenge failed",
-        "time": "2026-01-24 17:51:28"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Liveness challenge failed",
-        "time": "2026-01-24 17:51:35"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Liveness challenge failed",
-        "time": "2026-01-24 17:51:35"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Liveness challenge failed",
-        "time": "2026-01-24 17:51:36"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Liveness challenge failed",
-        "time": "2026-01-24 17:51:36"
-    },
-    {
-        "name": "aid",
-        "role": "user",
-        "action": "LOGIN",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-24 17:52:05"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Liveness challenge failed",
-        "time": "2026-01-24 17:52:08"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Liveness challenge failed",
-        "time": "2026-01-24 17:52:08"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Liveness challenge failed",
-        "time": "2026-01-24 17:52:09"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Liveness challenge failed",
-        "time": "2026-01-24 17:52:09"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Liveness challenge failed",
-        "time": "2026-01-24 17:52:10"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Liveness challenge failed",
-        "time": "2026-01-24 17:52:10"
-    },
-    {
-        "name": "aid",
-        "role": "user",
-        "action": "LOGIN",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-24 17:55:18"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Liveness challenge failed",
-        "time": "2026-01-24 17:55:39"
-    },
-    {
-        "name": "aid",
-        "role": "user",
-        "action": "LOGIN",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-24 18:02:38"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Liveness challenge failed",
-        "time": "2026-01-24 18:02:57"
-    },
-    {
-        "name": "aid",
-        "role": "user",
-        "action": "LOGIN",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-24 18:15:12"
-    },
-    {
-        "name": "aid",
-        "role": "user",
-        "action": "LOGOUT",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-24 18:15:24"
-    },
-    {
-        "name": "aid",
-        "role": "user",
-        "action": "LOGIN",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-24 18:15:31"
-    },
-    {
-        "name": "aid",
-        "role": "user",
-        "action": "LOGIN",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-25 11:37:50"
-    },
-    {
-        "name": "aid",
-        "role": "user",
-        "action": "LOGOUT",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-25 11:37:58"
-    },
-    {
-        "name": "osamah",
-        "role": "admin",
-        "action": "SYSTEM_BOOTSTRAP",
-        "result": "SUCCESS",
-        "reason": "Initial admin created",
-        "time": "2026-01-25 11:39:01"
-    },
-    {
-        "name": "osamah",
-        "role": "admin",
-        "action": "LOGIN",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-25 11:39:16"
-    },
-    {
-        "name": "osamah",
-        "role": "admin",
-        "action": "LOGOUT",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-25 11:39:23"
-    },
-    {
-        "name": "osamah",
-        "role": "admin",
-        "action": "LOGIN",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-25 11:39:35"
-    },
-    {
-        "name": "osamah",
-        "role": "admin",
-        "action": "LOGOUT",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-25 11:39:41"
-    },
-    {
-        "name": "osamah",
-        "role": "admin",
-        "action": "LOGIN",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-25 11:40:06"
-    },
-    {
-        "name": "osamah",
-        "role": "unknown",
-        "action": "BOOTSTRAP_LOGIN",
-        "result": "FAILED",
-        "reason": "Invalid credentials",
-        "time": "2026-01-25 11:42:03"
-    },
-    {
-        "name": "osamah",
-        "role": "admin",
-        "action": "SYSTEM_BOOTSTRAP",
-        "result": "SUCCESS",
-        "reason": "Initial admin created",
-        "time": "2026-01-25 11:42:17"
-    },
-    {
-        "name": "osamah",
-        "role": "admin",
-        "action": "LOGIN",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-25 11:42:26"
-    },
-    {
-        "name": "abdoh",
-        "role": "user",
-        "action": "FACE_ENROLL",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-25 11:43:05"
-    },
-    {
-        "name": "osamah",
-        "role": "admin",
-        "action": "LOGOUT",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-25 11:43:12"
-    },
-    {
-        "name": "abdoh",
-        "role": "user",
-        "action": "LOGIN",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-25 11:43:27"
-    },
-    {
-        "name": "abdoh",
-        "role": "user",
-        "action": "LOGOUT",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-25 11:43:35"
-    },
-    {
-        "name": "osamah",
-        "role": "admin",
-        "action": "LOGIN",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-25 11:43:40"
-    },
-    {
-        "name": "olllllllllllllah",
-        "role": "user",
-        "action": "FACE_ENROLL",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-25 11:45:23"
-    },
-    {
-        "name": "olllllllllllllah",
-        "role": "user",
-        "action": "LOGIN",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-25 12:36:24"
-    },
-    {
-        "name": "olllllllllllllah",
-        "role": "user",
-        "action": "LOGOUT",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-25 12:36:31"
-    },
-    {
-        "name": "olllllllllllllah",
-        "role": "user",
-        "action": "LOGIN",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-25 12:36:38"
-    },
-    {
-        "name": "olllllllllllllah",
-        "role": "user",
-        "action": "LOGOUT",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-25 12:36:40"
-    },
-    {
-        "name": "osamah",
-        "role": "admin",
-        "action": "SYSTEM_BOOTSTRAP",
-        "result": "SUCCESS",
-        "reason": "Initial admin created",
-        "time": "2026-01-25 12:37:28"
-    },
-    {
-        "name": "osamah",
-        "role": "admin",
-        "action": "LOGIN",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-25 12:37:39"
-    },
-    {
-        "name": "abdoh",
-        "role": "user",
-        "action": "FACE_ENROLL",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-25 12:38:07"
-    },
-    {
-        "name": "radman",
-        "role": "user",
-        "action": "FACE_ENROLL",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-25 12:38:37"
-    },
-    {
-        "name": "osamah",
-        "role": "admin",
-        "action": "LOGOUT",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-25 12:38:41"
-    },
-    {
-        "name": "osamah",
-        "role": "admin",
-        "action": "LOGIN",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-25 12:38:47"
-    },
-    {
-        "name": "osamah",
-        "role": "admin",
-        "action": "LOGOUT",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-25 12:38:50"
-    },
-    {
-        "name": "abdoh",
-        "role": "user",
-        "action": "LOGIN",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-25 12:38:58"
-    },
-    {
-        "name": "abdoh",
-        "role": "user",
-        "action": "LOGOUT",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-25 12:39:01"
-    },
-    {
-        "name": "radman",
-        "role": "user",
-        "action": "LOGIN",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-25 12:39:11"
-    },
-    {
-        "name": "radman",
-        "role": "user",
-        "action": "LOGOUT",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-25 12:43:52"
+        "time": "2026-01-27 11:16:51"
     },
     {
         "name": "unknown",
@@ -765,39 +61,31 @@
         "action": "LOGIN",
         "result": "FAILED",
         "reason": "Multiple faces (2)",
-        "time": "2026-01-25 12:44:24"
+        "time": "2026-01-27 11:17:05"
     },
     {
-        "name": "osamah",
-        "role": "admin",
-        "action": "LOGIN",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-25 12:44:38"
-    },
-    {
-        "name": "unknown",
-        "role": "none",
-        "action": "LOGIN",
-        "result": "FAILED",
-        "reason": "Multiple faces (2)",
-        "time": "2026-01-25 12:50:14"
-    },
-    {
-        "name": "osamah",
-        "role": "admin",
-        "action": "LOGIN",
-        "result": "SUCCESS",
-        "reason": "",
-        "time": "2026-01-25 12:50:31"
-    },
-    {
-        "name": "keeeef",
+        "name": "majeed",
         "role": "user",
-        "action": "FACE_ENROLL",
+        "action": "LOGIN",
         "result": "SUCCESS",
         "reason": "",
-        "time": "2026-01-25 12:51:08"
+        "time": "2026-01-27 11:17:44"
+    },
+    {
+        "name": "majeed",
+        "role": "user",
+        "action": "LOGOUT",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-27 11:17:58"
+    },
+    {
+        "name": "osamah",
+        "role": "admin",
+        "action": "LOGIN",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-27 11:19:26"
     },
     {
         "name": "osamah",
@@ -805,14 +93,110 @@
         "action": "LOGOUT",
         "result": "SUCCESS",
         "reason": "",
-        "time": "2026-01-25 12:51:16"
+        "time": "2026-01-27 11:19:37"
+    },
+    {
+        "name": "osamah",
+        "role": "admin",
+        "action": "LOGIN",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-27 11:20:04"
     },
     {
         "name": "unknown",
         "role": "none",
         "action": "LOGIN",
         "result": "FAILED",
-        "reason": "Multiple faces (2)",
-        "time": "2026-01-25 12:51:21"
+        "reason": "Liveness challenge failed",
+        "time": "2026-01-27 11:20:05"
+    },
+    {
+        "name": "osamah",
+        "role": "admin",
+        "action": "LOGOUT",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-27 11:23:11"
+    },
+    {
+        "name": "osamah",
+        "role": "admin",
+        "action": "LOGIN",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-27 11:23:48"
+    },
+    {
+        "name": "osamah",
+        "role": "admin",
+        "action": "LOGOUT",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-27 11:23:54"
+    },
+    {
+        "name": "osamah",
+        "role": "admin",
+        "action": "LOGIN",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-27 11:24:16"
+    },
+    {
+        "name": "osamah",
+        "role": "admin",
+        "action": "LOGOUT",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-27 11:24:21"
+    },
+    {
+        "name": "unknown",
+        "role": "none",
+        "action": "LOGIN",
+        "result": "FAILED",
+        "reason": "No match",
+        "time": "2026-01-27 21:30:06"
+    },
+    {
+        "name": "osamah",
+        "role": "admin",
+        "action": "LOGIN",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-27 21:30:11"
+    },
+    {
+        "name": "osamah",
+        "role": "admin",
+        "action": "LOGOUT",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-27 21:30:20"
+    },
+    {
+        "name": "unknown",
+        "role": "none",
+        "action": "LOGIN",
+        "result": "FAILED",
+        "reason": "No match",
+        "time": "2026-01-27 21:31:48"
+    },
+    {
+        "name": "unknown",
+        "role": "none",
+        "action": "LOGIN",
+        "result": "FAILED",
+        "reason": "No match",
+        "time": "2026-01-27 21:31:59"
+    },
+    {
+        "name": "osamah",
+        "role": "admin",
+        "action": "LOGIN",
+        "result": "SUCCESS",
+        "reason": "",
+        "time": "2026-01-27 21:36:03"
     }
 ]

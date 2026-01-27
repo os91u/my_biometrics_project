@@ -74,8 +74,22 @@ class AdminDashboard(ctk.CTkFrame):
         log_box.pack(fill="both", expand=True)
         
         if logs:
-            formatted_logs = "\n".join([f"[{l['timestamp']}] {l['event']} - {l['user']} ({l['role']}) -> {l['status']} {l.get('message', '')}" 
-                                       for l in reversed(logs)])
+            formatted_lines = []
+            for l in reversed(logs):
+                # Handle both old and new log formats
+                timestamp = l.get('timestamp') or l.get('time', 'N/A')
+                user = l.get('user') or l.get('name', 'unknown')
+                event = l.get('event') or l.get('action', 'N/A')
+                role = l.get('role', 'N/A')
+                status = l.get('status') or l.get('result', 'N/A')
+                message = l.get('message') or l.get('reason', '')
+                
+                line = f"[{timestamp}] {event} - {user} ({role}) -> {status}"
+                if message:
+                    line += f" | {message}"
+                formatted_lines.append(line)
+            
+            formatted_logs = "\n".join(formatted_lines)
         else:
             formatted_logs = "No audit logs available yet."
             

@@ -7,11 +7,10 @@ class ConfidenceEngine:
         """Aggregates all signals into a single confidence score (0-1)."""
         if len(distances) == 0:
             return 0.0, "No face match"
-        
-        # 1. Matching Score
-        # distance is 0 for perfect match, ~0.6 for threshold
-        # We invert it: 1.0 for perfect match, 0 for threshold
         best_distance = min(distances)
+        if best_distance > FACE_MATCH_THRESHOLD:
+            return 0.0, "Face match failed - distance too high"
+        
         match_score = max(0, 1 - (best_distance / (FACE_MATCH_THRESHOLD * 1.5)))
         
         # 2. Liveness Score
